@@ -105,6 +105,8 @@ resource "aws_route_table" "private" {
   }
 }
 
+resource "time_sleep" "test_lock" { create_duration = "30s" }
+
 resource "aws_route_table_association" "public" {
   count          = length(var.availability_zones)
   subnet_id      = aws_subnet.public[count.index].id
