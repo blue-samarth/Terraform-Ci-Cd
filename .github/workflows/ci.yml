@@ -24,6 +24,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
+          mask-aws-account-id: true
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -43,7 +44,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var-file=terraform.tfvars -no-color -out=tfplan
+        run: terraform plan -no-color -out=tfplan
         continue-on-error: true
 
       - name: Post Plan to PR
