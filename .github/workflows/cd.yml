@@ -26,11 +26,11 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           mask-aws-account-id: true
 
-      - name: Terraform Version
-        run: terraform version
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Version
+        run: terraform version
 
       - name: Terraform Init
         run: terraform init
