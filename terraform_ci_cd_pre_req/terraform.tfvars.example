@@ -1,0 +1,26 @@
+# AWS Configuration
+aws_region = "us-east-1"
+
+# Project Naming
+project_name = "my-project"
+environment  = "development"
+namespace    = "terraform"
+short_name   = "myproj"
+
+# S3 Bucket Configuration
+s3_bucket_name = "my-tfstate-bucket-12345"  # Leave null for auto-generated name
+
+# S3 Lifecycle Policy
+s3_expiration_days = 90
+
+# Security Settings
+block_public_access      = true
+versioning_enabled       = true
+server_side_encryption   = true
+
+# Destruction Protection
+prevent_s3_bucket_destroy = false  # Set to true to prevent accidental bucket deletion
+s3_force_destroy          = false  # Set to true to force delete bucket with contents
+
+# State Locking
+use_lockfile = true

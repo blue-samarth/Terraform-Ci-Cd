@@ -1,0 +1,52 @@
+# Terraform files
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform variable files (containing secrets)
+*.tfvars
+*.tfvars.json
+!example.tfvars
+!*.example.tfvars
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+Thumbs.db
+.vagrant/
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Python cache (if using Terraform CDK or Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+.github_pat_store

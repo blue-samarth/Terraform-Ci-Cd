@@ -207,9 +207,9 @@ set_secret() {
   local name="$1"
   local value="$2"
 
-  if echo -n "$value" | gh secret set "$name" \
+  if gh secret set "$name" \
     --repo "${OWNER}/${REPO}" \
-    --body -; then
+    --body "$value"; then
     success "Secret set: $name"
   else
     error "Failed to set secret: $name"
